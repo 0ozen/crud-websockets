@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web-sockets</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <div class="bg-slate-700 text-white flex items-center justify-center gap-5 flex-row w-screen h-screen ">
+    <div class=" flex flex-col bg-slate-600 rounded-xl p-5  animate__animated animate__fadeInUp">
+      <h3>New Note</h3>
+      <form class="flex flex-col gap-1 text-black" id="formId">
+        <input id="title" type="title" class="rounded-md" autofocus>
+        <textarea id="descripcion" class="rounded-md" name="message" cols="15" rows="3"></textarea>
+        <button class="bg-slate-900  rounded-xl  text-white">send</button>
+      </form>
+    </div>
+    <div class="flex flex-col bg-slate-600 rounded-xl p-5 max-h-96 truncate ">
+      <h3>Notes</h3>
+      <div id="list" class="flex flex-col gap-3 max-w-xl h-1/2 overflow-scroll overflow-x-hidden py-1 "></div>
+    </div>
+  </div>
+
+
+  <script src="/socket.io/socket.io.min.js"></script>
+  <script src="./notes.js"></script>
+  <script src="./socket.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
